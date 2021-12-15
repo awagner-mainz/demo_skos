@@ -1,0 +1,123 @@
+@prefix : <https://w3id.org/rg-mpg-de/polmat/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix vs: <https://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:scheme a skos:ConceptScheme ;
+    dct:title           "MPIeR Categories of Matters regulated by Police Ordinances"@en ,
+                        "MPIeR Materien der Policeyordnungen"@de ,
+                        "MPIeR Categorisation des matières d'ordonnances de police"@fr ,
+                        "MPIeR Politie Ordinanties"@nl ;
+    dct:description     "Concept scheme of matters regulated by historical normative rules / police ordinances"@en ;
+    dct:created         "2020-11-10"^^xsd:date ;
+    dct:issued          "2020-11-10"^^xsd:date ;
+    dct:modified        "2020-11-17"^^xsd:date ;
+    dct:publisher       <http://lobid.org/gnd/2019144-3> ;
+    dct:source          <https://raw.githubusercontent.com/rg-mpg-de/vocabs-polmat/main/polmat.ttl> ;
+    dct:creator         <https://orcid.org/0000-0003-1835-1653> ;
+    dct:contributor     "Härter, Karl" ,
+                        "Kotkas, Toomas" ,
+                        "Romein, Annemieke",
+                        "Stolleis, Michael",
+                        "Wagner, Andreas" ;
+    dct:license         "cczero" ;
+    dct:bibliographicCitation  "Härter, K. et al.: MPIeR Categories of Matters regulated by Police Ordinances. SKOS Concept Scheme. Version 1.0.0. URL: <https://w3id.org/rg-mpg-de/polmat/1.0.0>"@en ;
+    rdfs:seeAlso        <https://www.lhlt.mpg.de/research-project/repertory-of-policeyordnungen> ;
+    vann:preferredNamespacePrefix "polmat" ;
+    vann:preferredNamespaceUri "https://w3id.org/rg-mpg-de/polmat/" ;
+    owl:versionInfo     "1.0.0"@en ;
+    owl:versionIRI      <https://w3id.org/rg-mpg-de/polmat/1.0.0> ;
+    vs:term_status      "testing" ;
+    skos:prefLabel      "MPIeR Police Legislation Matters Concept Scheme"@en ,
+                        "MPIeR Policeyordnungsmaterien Vokabular"@de ,
+                        "MPIeR Politieordonnanties vocabulaire"@nl ;
+    skos:hasTopConcept  :n0 ;
+    skos:notation       "polmat" ;
+    .
+
+:n0 a skos:Concept ;
+    skos:inScheme       :scheme ;
+    skos:topConceptOf   :scheme ;
+    skos:notation       "0" ;
+    skos:altLabel       "0Matter"@en ;
+    skos:prefLabel      "Regulatory Matter"@en ,
+                        "Regelungsmaterie"@de ,
+                        "Voorwerp van de regeling"@nl ;
+    skos:scopeNote      "Social practice or constellation regulated by normative provisions"@en ,
+                        "Von normativen Regeln regulierte Soziale Praxis oder Konstellation"@de ;
+    skos:narrower       :n01 .
+
+:n01 a skos:Concept ;
+    skos:inScheme       :scheme ;
+    skos:notation       "01" ;
+    skos:altLabel       "01 Politia"@en ;
+    skos:prefLabel      "Police Matter"@en ,
+                        "Policeymaterie"@de ,
+                        "Politieordonnanties"@nl ;
+    skos:broader        :n0 ;
+    skos:narrower       :n01.1so ,
+                        :n01.4esp .
+
+:n01.1so a skos:Concept ;
+    skos:inScheme       :scheme ;
+    skos:notation       "01.1so" ;
+    skos:altLabel       "1SO"@en;
+    skos:prefLabel      "1 Gesellschafts- und Sozialordnung. Religion"@de ,
+                        "1 Social Order and Religion"@en ,
+                        "1 Sociale orde en religie"@nl ;
+    skos:scopeNote      "TODO: Create a scope note here."@en ;
+    skos:broader        :n01 ;
+    skos:narrower       :n01.1so.1.
+
+
+:n01.1so.1 a skos:Concept ;
+    skos:inScheme       :scheme ;
+    skos:notation       "01.1so.1" ;
+    skos:altLabel       "1SO1"@en;
+    skos:prefLabel      "1.1 Matters of Religion"@en ,
+                        "1.1 Religieuze aangelegenheden"@nl ,
+                        "1.1 Religionsangelegenheiten"@de ;
+    skos:broader        :n01.1so ;
+    skos:narrower       :n01.1so.1.a .
+
+
+:n01.1so.1.a a skos:Concept ;
+    skos:inScheme       :scheme ;
+    skos:notation       "01.1so.1.a" ;
+    skos:altLabel       "1SO1A"@en ;
+    skos:prefLabel      "Bedelmonniken"@nl ,
+                        "Bettelmönche"@de ,
+                        "Mendicants"@en ;
+    skos:broader        :n01.1so.1 .
+
+
+:n01.4esp a skos:Concept ;
+    skos:inScheme       :scheme ;
+    skos:notation       "01.4esp" ;
+    skos:altLabel       "4ESP"@en;
+    skos:prefLabel      "4 Wirtschaftsordnung. Arbeits- und Berufsordnung"@de ,
+                        "4 Economic order. Work and professional regulations"@en ,
+                        "4 Economische orde. Werk- en professionele voorschriften"@nl ;
+    skos:broader        :n01 ;
+    skos:narrower       :n01.4esp.5 .
+
+:n01.4esp.5 a skos:Concept ;
+    skos:inScheme       :scheme ;
+    skos:notation       "01.4esp.5" ;
+    skos:altLabel       "4ESP5"@en;
+    skos:prefLabel      "4.5 Handwerk und Gewerbe"@de ,
+                        "4.5 Ambacht en handel"@nl ,
+                        "4.5 Craft and trade"@en ;
+    skos:broader        :n01.4esp ;
+    skos:narrower       :n01.4esp.5.e .
+
+:n01.4esp.5.e a skos:Concept ;
+    skos:inScheme       :scheme ;
+    skos:notation       "01.4esp.5.e" ;
+    skos:altLabel       "4ESP5E"@en;
+    skos:prefLabel      "Gesellen"@de, "Journeymen"@en, "gezellen"@nl ;
+    skos:broader        :n01.4esp.5 .
